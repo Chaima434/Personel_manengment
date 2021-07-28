@@ -31,41 +31,41 @@
 
                                     <form action="#" data-parsley-validate novalidate>
                                     <div class="form-group">
-                                            <label for="login">Login</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Login" class="form-control" id="login">
+                                            <label for="first_name">first_name</label>
+                                            <input type="text" name="first_name" parsley-trigger="change" required
+                                                   placeholder="Enter firstname" class="form-control" id="first name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="Firstname">First Name</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Enter first name" class="form-control" id="FirstName">
+                                            <label for="lastname">Last Name</label>
+                                           <input type="text" name="Last Name" parsley-trigger="change" required
+                                                   placeholder="Enter Lastname" class="form-control" id="Last Name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="LastName">Last Name</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Enter Last name" class="form-control" id="LastName">
+                                            <label for="LastName">CIN</label>
+                                            <input type="text" name="CIN" parsley-trigger="change" required
+                                                   placeholder="Enter your CIN" class="form-control" id="cin">
                                         </div>
                                         <div class="form-group">
                                             <label for="emailAddress">Email address</label>
-                                            <input type="email" name="email" parsley-trigger="change" required
+                                            <input type="email" name="Email address" parsley-trigger="change" required
                                                    placeholder="Enter email" class="form-control" id="emailAddress">
                                         </div>
                                         <div class="form-group">
-                                            <label for="pass1">Password</label>
-                                            <input id="pass1" type="password" placeholder="Password" required
-                                                   class="form-control">
+                                            <label for="pass1">Login</label>
+                                            <input id="pass1" type="login" placeholder="login" required
+                                                   class="form-control" name="login">
                                         </div>
                                         <div class="form-group">
-                                            <label for="passWord2">Confirm Password </label>
+                                            <label for="passWord2"> Password </label>
                                             <input data-parsley-equalto="#pass1" type="password" required
-                                                   placeholder="Password" class="form-control" id="passWord2">
+                                                   placeholder="Password" class="form-control" id="passWord2" name="password">
                                         </div>
                                         <div class="form-group">
-                                            <div class="checkbox">
-                                                <input id="remember-1" type="checkbox">
-                                                <label for="remember-1"> Remember me </label>
-                                            </div>
+                                            <label for="passWord2">Confirm Password</label>
+                                            <input data-parsley-equalto="#pass1" type="password" required
+                                                   placeholder=" Confirm Password" class="form-control" id="passWord2">
                                         </div>
+                                        
 
                                         <div class="form-group text-right mb-0">
                                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">

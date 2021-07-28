@@ -69,7 +69,8 @@
 							Dashboard 
 						</span>
 						<span class="menu-arrow"></span>
-					</a>
+						
+
 				</li>
 				<li>
 					<a href="javascript: void(0);">

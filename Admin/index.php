@@ -16,7 +16,7 @@
         require_once("Template/js.php");
         ?> 
         <?php
-        //require_once("Template/Admin/AddUser.php");
+        //require_once("login.php");
         ?> 
         </div>
          <!-- Start Content-->

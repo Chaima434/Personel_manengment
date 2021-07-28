@@ -27,45 +27,37 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Add New user</h4>
+                                    <h4 class="header-title mt-0 mb-3"> User Manengment </h4>
 
-                                    <form action="#" data-parsley-validate novalidate>
-                                    <div class="form-group">
+                                    <form method="post" action="./controller/ajoutAdmin.php" >
+                                    
+                                        <div class="form-group">
+                                            <label for="Firstname"> First Name </label>
+                                            <input type="text"  parsley-trigger="change" required
+                                                   placeholder="Enter first name" class="form-control" id="FirstName" name="first_name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="LastName"> Last Name </label>
+                                            <input type="text"  parsley-trigger="change" required
+                                                   placeholder="Enter Last name" class="form-control" id="LastName" name="last_name">
+                                        </div>
+                                        
+                                        <div class="form-group">
                                             <label for="login">Login</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Login" class="form-control" id="login">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Firstname">First Name</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Enter first name" class="form-control" id="FirstName">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="LastName">Last Name</label>
-                                            <input type="text" name="nick" parsley-trigger="change" required
-                                                   placeholder="Enter Last name" class="form-control" id="LastName">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="emailAddress">Email address</label>
-                                            <input type="email" name="email" parsley-trigger="change" required
-                                                   placeholder="Enter email" class="form-control" id="emailAddress">
+                                            <input type="text" parsley-trigger="change" required
+                                                   placeholder="Login" class="form-control" id="login" name="login">
                                         </div>
                                         <div class="form-group">
                                             <label for="pass1">Password</label>
                                             <input id="pass1" type="password" placeholder="Password" required
-                                                   class="form-control">
+                                                   class="form-control" name="password">
                                         </div>
                                         <div class="form-group">
-                                            <label for="passWord2">Confirm Password </label>
+                                            <label for="passWord2"> Confirm Password  </label>
                                             <input data-parsley-equalto="#pass1" type="password" required
                                                    placeholder="Password" class="form-control" id="passWord2">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="checkbox">
-                                                <input id="remember-1" type="checkbox">
-                                                <label for="remember-1"> Remember me </label>
-                                            </div>
-                                        </div>
+                                        
 
                                         <div class="form-group text-right mb-0">
                                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
