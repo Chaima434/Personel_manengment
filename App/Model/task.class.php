@@ -15,7 +15,7 @@ $this->Description = addslashes($Description);
 $this->personnel = addslashes($personnel);
 $this->projet = addslashes($projet);
 $this->date_fin = addslashes($date_fin);
-$this->Pourcentage = addslashes($pourcentage);
+$this->pourcentage = addslashes($pourcentage);
 $this->etat =addslashes($etat);
 
 
@@ -27,6 +27,7 @@ public function ajouter(){
 include('../includes/connect_db.php');
         
         $req = $bdd->exec("INSERT INTO `tache`(`title`, `Description`, `personnel`,`projet`,`date_fin`,`pourcentage`,`etat`)  VALUES ('$this->title','$this->Description','$this->personnel','$this->projet','$this->date_fin','$this->pourcentage','$this->etat')");
+        //echo "INSERT INTO `tache`(`title`, `Description`, `personnel`,`projet`,`date_fin`,`pourcentage`,`etat`)  VALUES ('$this->title','$this->Description','$this->personnel','$this->projet','$this->date_fin','$this->pourcentage','$this->etat')" ;
         echo'<span class="message_envoyer">OUI</span>';
                 //return TRUE;
             
@@ -40,7 +41,8 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `admin` SET `nom_admin`='$this->nom_admin',`prenom_admin`='$this->prenom_admin',`email_admin`='$this->email_admin',`mot_de_passe`='$this->mot_de_passe',`login_admin`='$this->login_admin',`type_admin`='$this->type_admin' WHERE id_admin = $id");
+        $r=$bdd->exec(" UPDATE `tache` SET `title`='$this->title',`Description`='$this->Description',`personnel`='$this->personnel',`projet`='$this->projet',`date_fin`='$this->date_fin',`pourcentage`='$this->pourcentage',`etat`='$this->etat'
+         WHERE id_task = $id");
                 
         
        // echo'oui';
@@ -56,7 +58,7 @@ public function supprimer(){
     
     include('../includes/connect_db.php');
 
-    $req = $bdd->exec('DELETE FROM projet WHERE id_projet=\''.$_GET['id_projet'].'\''); 
+    $req = $bdd->exec('DELETE FROM tache WHERE id_task=\''.$_GET['id_task'].'\''); 
  
         echo'oui';  
  

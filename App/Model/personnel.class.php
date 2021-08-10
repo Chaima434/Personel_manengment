@@ -39,7 +39,7 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `admin` SET `nom_admin`='$this->nom_admin',`prenom_admin`='$this->prenom_admin',`email_admin`='$this->email_admin',`mot_de_passe`='$this->mot_de_passe',`login_admin`='$this->login_admin',`type_admin`='$this->type_admin' WHERE id_admin = $id");
+        $r=$bdd->exec(" UPDATE `personnel` SET `first_name`='$this->first_name',`last_name`='$this->last_name',`CIN`='$this->CIN',`email`='$this->email',`login`='$this->login',`password`='$this->password' WHERE id_personnel = $id");
 				
         
        // echo'oui';

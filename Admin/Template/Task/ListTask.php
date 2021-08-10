@@ -1,4 +1,11 @@
+ 
+<?php
 
+
+include('../App/includes/connect_db.php');
+$req = $bdd->query("SELECT * FROM tache");
+
+ ?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -18,13 +25,13 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th> Action </th>
+                                            <th>title</th>
+                                            <th>Description</th>
+                                            <th>personnel</th>
+                                            <th>projet</th>
+                                            <th>date_fin</th>
+                                            <th>pourcentage</th>
+                                            <th> etat </th>
                                           
                                           
                                         </tr>
@@ -32,20 +39,28 @@
 
 
                                         <tbody>
-                                           
+                                            <?php while($donnees = $req->fetch()) {?>
                                         <tr>
                                             
-                                            <td>aa</td>
-                                            <td>ss</td>
-                                            <td>ss</td>
-                                            <td>ss</td>
-                                            <td>ss</td>
-                                            <td>ss</td>
+                                            <td><?php echo $donnees['title'] ?></td>
+                                            <td><?php echo $donnees['Description'] ?></td>
+                                            <td><?php echo $donnees['personnel'] ?></td>
+                                            <td><?php echo $donnees['projet'] ?></td>
+                                            <td><?php echo $donnees['date_fin'] ?></td>
+                                            <td><?php echo $donnees['pourcentage'] ?></td>
+                                            <td><?php echo $donnees['etat'] ?></td>
                                             <td>
-												
-											</td>
+                                                <center>
+                                                     <a href="../App/controller/SuppTask.php?id_task=<?php echo $donnees['id_task']?>" class="ti-trash"> </a>
+                                                </center>
+                                        
+                                                <center>
+                                                    <a href="ModifTask.php?id=<?php echo $donnees['id_task']?>" class="ti-pencil-alt"> </a>
+                                                </center>
+                                            </td>
 
                                         </tr>
+                                         <?php } ?>
                                        
                                         </tbody>
                                     </table>

@@ -1,7 +1,8 @@
 
 <?php 
 
-include('./includes/connect_db.php');
+
+include('../App/includes/connect_db.php');
 
         $id = $_GET['id'];
 //echo $id;
@@ -42,7 +43,7 @@ include('./includes/connect_db.php');
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3">Add New Personel</h4>
-                                     <form method="post" action="./controller/ajoutpersonnel.php" >
+                                     <form method="post" action="../App/controller/modifPersonnel.php?id=<?php echo $donnees['id_personnel'] ?>" >
                                     <div class="form-group">
                                             <label for="first_name">first_name</label>
                                             <input type="text" name="first_name" parsley-trigger="change" required

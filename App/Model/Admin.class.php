@@ -8,7 +8,8 @@ private $password;
 
 
 
-function __construct($first_name,$last_name,$login,$password){
+function __construct($first_name,$last_name,$login,$password)
+{
 $this->first_name = addslashes($first_name);
 $this->last_name = addslashes($last_name);
 $this->login = addslashes($login);
@@ -66,12 +67,13 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `admin` SET `first_name`='$this->first_name',`last_name`='$this->last_name',`login`='$this->login',`password`='$this->password' WHERE id_admin = $id");
+        $r=$bdd->exec(" UPDATE `admin` SET `first_name`='$this->first_name',`last_name`='$this->last_name',`login`='$this->login',`password`='$this->password' WHERE id= $id");
 				
-        
+       // echo " UPDATE `admin` SET `first_name`='$this->first_name',`last_name`='$this->last_name',`login`='$this->login',`password`='$this->password' WHERE id= $id";
        // echo'oui';
         
 }	
+
 
 
 

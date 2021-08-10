@@ -29,7 +29,7 @@
 
                                     <h4 class="header-title mt-0 mb-3"> User Manengment </h4>
 
-                                    <form method="post" action="./controller/ajoutAdmin.php" >
+                                    <form method="post" action="../App/controller/ajoutAdmin.php" >
                                     
                                         <div class="form-group">
                                             <label for="Firstname"> First Name </label>

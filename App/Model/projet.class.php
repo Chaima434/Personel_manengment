@@ -38,7 +38,7 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `admin` SET `nom_admin`='$this->nom_admin',`prenom_admin`='$this->prenom_admin',`email_admin`='$this->email_admin',`mot_de_passe`='$this->mot_de_passe',`login_admin`='$this->login_admin',`type_admin`='$this->type_admin' WHERE id_admin = $id");
+        $r=$bdd->exec(" UPDATE `projet` SET `project_name`='$this->project_name',`Description`='$this->Description',`date_deb`='$this->date_deb',`date_fin`='$this->date_fin',`Pourcentage`='$this->Pourcentage',`prix`='$this->prix' WHERE id_projet = $id");
 				
         
        // echo'oui';

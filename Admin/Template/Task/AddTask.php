@@ -1,3 +1,4 @@
+
  <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
@@ -28,7 +29,7 @@
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3">Add New Task </h4>
-                                     <form method="post" action="./controller/AjouterTask.php" >
+                                     <form method="post" action="../App/controller/AjouterTask.php" >
                                     <div class="form-group">
                                             <label for="title">title</label>
                                             <input type="text" name="title" parsley-trigger="change" required

@@ -1,7 +1,7 @@
 
 <?php 
 
-include('./includes/connect_db.php');
+include('../App/includes/connect_db.php');
 
         $id = $_GET['id'];
 //echo $id;
@@ -41,8 +41,9 @@ include('./includes/connect_db.php');
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3"> User Manengment </h4>
+                                
 
-                                    <form method="post" action="./controller/modifAdmin.php?id=<?php echo $donnees['id_admin'] ?>" >
+                                    <form method="post" action="../App/controller/modifAdmin.php?id=<?php echo $donnees['id'] ?>" >
                                     
                                         <div class="form-group">
                                             <label for="Firstname"> First Name </label>

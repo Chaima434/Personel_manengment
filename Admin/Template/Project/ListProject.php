@@ -1,6 +1,7 @@
 <?php
 
-include('./includes/connect_db.php');
+
+include('../App/includes/connect_db.php');
 $req = $bdd->query("SELECT * FROM projet");
 
  ?>
@@ -48,7 +49,7 @@ $req = $bdd->query("SELECT * FROM projet");
                                             <td><?php echo $donnees['prix'] ?></td>
                                             <td>
 												<center>
-													 <a href="controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
+													 <a href="../App/controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
 												</center>
 										
 												<center>

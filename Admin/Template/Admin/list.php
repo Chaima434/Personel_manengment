@@ -1,6 +1,6 @@
 <?php
 
-include('./includes/connect_db.php');
+include('../App/includes/connect_db.php');
 $req = $bdd->query("SELECT * FROM admin");
 
  ?>
@@ -42,7 +42,7 @@ $req = $bdd->query("SELECT * FROM admin");
                                             <td><?php echo $donnees['password'] ?></td>
 											<td> 
 												<center>
-                                                    <a href="controller/SuppAdmin.php?id=<?php echo $donnees['id']?>" class="ti-trash"> </a>
+                                                    <a href="../App/controller/SuppAdmin.php?id=<?php echo $donnees['id']?>" class="ti-trash"> </a>
 												</center>
 
 												<center>

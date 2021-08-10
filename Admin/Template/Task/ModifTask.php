@@ -1,3 +1,15 @@
+<?php 
+
+include('../App/includes/connect_db.php');
+
+        $id = $_GET['id'];
+//echo $id;
+//exit;
+        
+        $req = $bdd->query(" SELECT * FROM tache WHERE id_task= $id ");
+        $donnees = $req->fetch();
+
+?>
  <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
@@ -27,37 +39,42 @@
                                         </div>
                                     </div>
 
-                                    <h4 class="header-title mt-0 mb-3">Add New Project</h4>
-                                     <form method="post" action="../App/controller/ajoutProjet.php" >
+                                    <h4 class="header-title mt-0 mb-3">Add New Task </h4>
+                                     <form method="post" action="../App/controller/ModifTask.php?id=<?php echo $donnees['id_task'] ?>" >
                                     <div class="form-group">
-                                            <label for="project_name">Project_name</label>
-                                            <input type="text" name="project_name" parsley-trigger="change" required
-                                                   placeholder="Enter project_name" class="form-control" id="project_name">
+                                            <label for="title">title</label>
+                                            <input type="text" name="title" parsley-trigger="change" required
+                                                   placeholder="Enter title" class="form-control" id="title" value="<?php echo $donnees['title'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>
                                            <input type="text" name="Description" parsley-trigger="change" required
-                                                   placeholder="Enter Description" class="form-control" id="Description">
+                                                   placeholder="Enter Description" class="form-control" id="Description" value="<?php echo $donnees['Description'] ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="date_debut">date_debut</label>
-                                            <input type="date" name="date_deb" parsley-trigger="change" required
-                                                   placeholder="Enter your date_debut" class="form-control" id="date_debut">
+                                            <label for="personnel">personnel</label>
+                                            <input type="text" name="personnel" parsley-trigger="change" required
+                                                   placeholder="Enter your personnel" class="form-control" id="personnel" value="<?php echo $donnees['personnel'] ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="projet">projet</label>
+                                            <input type="texts" name="projet" parsley-trigger="change" required
+                                                   placeholder="Enter your projet" class="form-control" id="projet"value="<?php echo $donnees['projet'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="date_fin">date_fin</label>
                                             <input type="date" name="date_fin" parsley-trigger="change" required
-                                                   placeholder="Enter date_fin" class="form-control" id="date_fin">
+                                                   placeholder="Enter date_fin" class="form-control" id="date_fin"value="<?php echo $donnees['date_fin'] ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="Pourcentage">Pourcentage</label>
-                                            <input id="Pourcentage" type="Pourcentage" placeholder="Pourcentage" required
-                                                   class="form-control" name="Pourcentage">
+                                            <label for="Pourcentage">pourcentage</label>
+                                            <input id="pourcentage" type="Pourcentage" placeholder="pourcentage" required
+                                                   class="form-control" name="pourcentage"value="<?php echo $donnees['pourcentage'] ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="prix"> prix </label>
-                                            <input data-parsley-equalto="#prix" type="number" required
-                                                   placeholder="prix" class="form-control" id="prix" name="prix">
+                                            <label for="etat"> etat </label>
+                                            <input data-parsley-equalto="#etat" type="etat" required
+                                                   placeholder="etat" class="form-control" id="etat" name="etat"value="<?php echo $donnees['etat'] ?>">
                                         </div>
                                         <div class="form-group text-right mb-0">
                                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">

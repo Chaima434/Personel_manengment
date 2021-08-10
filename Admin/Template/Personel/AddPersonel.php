@@ -28,7 +28,7 @@
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3">Add New Personel</h4>
-                                     <form method="post" action="./controller/ajoutpersonnel.php" >
+                                     <form method="post" action="../App/controller/ajoutpersonnel.php" >
                                     <div class="form-group">
                                             <label for="first_name">first_name</label>
                                             <input type="text" name="first_name" parsley-trigger="change" required

@@ -1,12 +1,12 @@
 <?php 
 
-include('./includes/connect_db.php');
+include('../App/includes/connect_db.php');
 
         $id = $_GET['id'];
 //echo $id;
 //exit;
         
-        $req = $bdd->query(" SELECT * FROM personnel WHERE id_projet = $id ");
+        $req = $bdd->query(" SELECT * FROM projet WHERE id_projet = $id ");
         $donnees = $req->fetch();
 
 ?>
@@ -40,11 +40,11 @@ include('./includes/connect_db.php');
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3">Add New Project</h4>
-                                     <form method="post" action="./controller/ajoutProjet.php" >
+                                     <form method="post" action="../App/controller/ModifProjet.php?id=<?php echo $donnees['id_projet'] ?>" >
                                     <div class="form-group">
-                                            <label for="Project_name">Project_name</label>
-                                            <input type="text" name="Project_name" parsley-trigger="change" required
-                                                   placeholder="Enter Project_name" class="form-control" id="Project_name" value="<?php echo $donnees['Project_name'] ?>">
+                                            <label for="project_name">Project_name</label>
+                                            <input type="text" name="project_name" parsley-trigger="change" required
+                                                   placeholder="Enter Project_name" class="form-control" id="project_name" value="<?php echo $donnees['project_name'] ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="Description">Description</label>

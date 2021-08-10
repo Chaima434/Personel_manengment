@@ -1,6 +1,6 @@
 <?php
 
-include('./includes/connect_db.php');
+include('../App/includes/connect_db.php');
 $req = $bdd->query("SELECT * FROM personnel");
 
  ?>
@@ -48,7 +48,7 @@ $req = $bdd->query("SELECT * FROM personnel");
                                             <td><?php echo $donnees['password'] ?></td>
                                             <td>
 												<center>
-                                                    <a href="controller/SuppPersonnel.php?id_personnel=<?php echo $donnees['id_personnel']?>" class="ti-trash"> </a>
+                                                    <a href="../App/controller/SuppPersonnel.php?id_personnel=<?php echo $donnees['id_personnel']?>" class="ti-trash"> </a>
                                                 </center>
 
 												<center>
