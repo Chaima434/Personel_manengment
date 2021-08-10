@@ -124,12 +124,47 @@
 					</a>
 					<ul class="nav-second-level" aria-expanded="false">
 						<li>
+							<a href="AddProject.php">
+								Add new Project
+							</a>
+						</li>
+						<li>
 							<a href="ListProject.php">
 								List of Projects
 							</a>
 						</li>
 					</ul>
 				</li>
+
+
+
+
+				<li>
+					<a href="javascript: void(0);">
+						<i class="  far fa-edit"></i>
+						<span> 
+							Task Manengment 
+						</span>
+						<span class="menu-arrow"></span>
+					</a>
+					<ul class="nav-second-level" aria-expanded="false">
+						<li>
+							<a href="AddTask.php">
+								Add new Task
+							</a>
+						</li>
+						<li>
+							<a href="ListTask.php">
+								List of Task
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+
+
+
                 <li class="menu-title">
 					Apps
 				</li>

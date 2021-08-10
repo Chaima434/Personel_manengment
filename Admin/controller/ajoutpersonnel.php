@@ -8,4 +8,5 @@ $personnel->ajouter();
 //header("Location:../ListeDesAdministrateur.php?resultat=oui");
 //echo "oui";
 //exit();
+
 ?>

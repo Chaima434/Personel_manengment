@@ -28,6 +28,35 @@ include('../includes/connect_db.php');
                 //return TRUE;
 			
 }
+ public function getAll()
+        {
+            try
+            {
+               include('../includes/connect_db.php');
+                $T = array();
+                $res = $bdd->query("SELECT * from admin");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (	'id'=>$tab[0],
+                        'first_name'=> $tab[1],
+                        'last_name' => $tab[2],
+                        'login' => $tab[3],
+                        'password'=> $tab[4],
+                        
+                        
+                    );
+                    $i++;
+                }
+                return $T;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return null;
+            }
+        }
 
 
 
@@ -37,7 +66,7 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `admin` SET `nom_admin`='$this->nom_admin',`prenom_admin`='$this->prenom_admin',`email_admin`='$this->email_admin',`mot_de_passe`='$this->mot_de_passe',`login_admin`='$this->login_admin',`type_admin`='$this->type_admin' WHERE id_admin = $id");
+        $r=$bdd->exec(" UPDATE `admin` SET `first_name`='$this->first_name',`last_name`='$this->last_name',`login`='$this->login',`password`='$this->password' WHERE id_admin = $id");
 				
         
        // echo'oui';
@@ -53,7 +82,7 @@ public function supprimer(){
     
 	include('../includes/connect_db.php');
 
-    $req = $bdd->exec('DELETE FROM admin WHERE id_admin=\''.$_GET['id'].'\''); 
+    $req = $bdd->exec('DELETE FROM admin WHERE id=\''.$_GET['id'].'\''); 
  
 		echo'oui';	
  

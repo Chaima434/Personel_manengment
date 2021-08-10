@@ -1,5 +1,5 @@
 <?php
-class Admin{
+class Personnel{
 private $first_name;
 private $last_name;
 private $CIN;
@@ -13,7 +13,7 @@ private $password;
 function __construct($first_name,$last_name,$CIN,$email,$login,$password){
 $this->first_name = addslashes($first_name);
 $this->last_name = addslashes($last_name);
-$this->$CIN = addslashes($$CIN);
+$this->CIN = addslashes($CIN);
 $this->email = addslashes($email);
 $this->login = addslashes($login);
 $this->password = md5($password);
@@ -26,8 +26,8 @@ public function ajouter(){
 
 include('../includes/connect_db.php');
 		
-		$req = $bdd->exec("INSERT INTO `personnel`(`first_name`, `last_name`,`CIN`,`email`, `login`, `password`)	VALUES ('$this->first_name','$this->last_name','$this->login','$this->password')");
-		
+		$req = $bdd->exec("INSERT INTO `personnel`(`first_name`, `last_name`,`CIN`,`email`, `login`, `password`)	VALUES ('$this->first_name','$this->last_name','$this->CIN','$this->email','$this->login','$this->password')");
+
 		echo'<span class="message_envoyer">OUI</span>';
                 //return TRUE;
 			
@@ -45,14 +45,14 @@ public function modifier(){
        // echo'oui';
 
 
-
+}
 
 
 public function supprimer(){ 
     
 	include('../includes/connect_db.php');
 
-    $req = $bdd->exec('DELETE FROM admin WHERE id_admin=\''.$_GET['id'].'\''); 
+    $req = $bdd->exec('DELETE FROM personnel WHERE id_personnel=\''.$_GET['id_personnel'].'\''); 
  
 		echo'oui';	
  

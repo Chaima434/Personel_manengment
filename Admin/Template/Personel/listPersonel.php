@@ -1,3 +1,9 @@
+<?php
+
+include('./includes/connect_db.php');
+$req = $bdd->query("SELECT * FROM personnel");
+
+ ?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -17,14 +23,14 @@
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th> Delete</th>
-                                            <th> Update</th>
+                                            <th>first_name</th>
+                                            <th>last_name</th>
+                                            <th>CIN</th>
+                                            <th>email</th>
+                                            <th>login</th>
+                                            <th>password</th>
+                                            <th>Action</th>
+                                           
 
 
                                         </tr>
@@ -32,25 +38,26 @@
 
 
                                         <tbody>
+                                             <?php while($donnees = $req->fetch()) {?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><?php echo $donnees['first_name'] ?></td>
+                                            <td><?php echo $donnees['last_name'] ?></td>
+                                            <td><?php echo $donnees['CIN'] ?></td>
+                                            <td><?php echo $donnees['email'] ?></td>
+                                            <td><?php echo $donnees['login'] ?></td>
+                                            <td><?php echo $donnees['password'] ?></td>
                                             <td>
 												<center>
-													<button class="ti-trash"></button>
-												</center>
-											</td>
-                                            <td>
+                                                    <a href="controller/SuppPersonnel.php?id_personnel=<?php echo $donnees['id_personnel']?>" class="ti-trash"> </a>
+                                                </center>
+
 												<center>
-													<button class="ti-pencil-alt"></button>
+													
+                                                     <a href="ModifPersonnel.php?id=<?php echo $donnees['id_personnel']?>" class="ti-pencil-alt"> </a>
 												</center>
 											</td>
                                         </tr>
-                                       
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

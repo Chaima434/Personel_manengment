@@ -28,8 +28,7 @@
                                     </div>
 
                                     <h4 class="header-title mt-0 mb-3">Add New Personel</h4>
-
-                                    <form action="#" data-parsley-validate novalidate>
+                                     <form method="post" action="./controller/ajoutpersonnel.php" >
                                     <div class="form-group">
                                             <label for="first_name">first_name</label>
                                             <input type="text" name="first_name" parsley-trigger="change" required
@@ -37,17 +36,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="lastname">Last Name</label>
-                                           <input type="text" name="Last Name" parsley-trigger="change" required
+                                           <input type="text" name="last_name" parsley-trigger="change" required
                                                    placeholder="Enter Lastname" class="form-control" id="Last Name">
                                         </div>
                                         <div class="form-group">
                                             <label for="LastName">CIN</label>
                                             <input type="text" name="CIN" parsley-trigger="change" required
-                                                   placeholder="Enter your CIN" class="form-control" id="cin">
+                                                   placeholder="Enter your CIN" class="form-control" id="CIN">
                                         </div>
                                         <div class="form-group">
                                             <label for="emailAddress">Email address</label>
-                                            <input type="email" name="Email address" parsley-trigger="change" required
+                                            <input type="email" name="email" parsley-trigger="change" required
                                                    placeholder="Enter email" class="form-control" id="emailAddress">
                                         </div>
                                         <div class="form-group">

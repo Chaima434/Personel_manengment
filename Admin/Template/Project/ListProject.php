@@ -1,3 +1,9 @@
+<?php
+
+include('./includes/connect_db.php');
+$req = $bdd->query("SELECT * FROM projet");
+
+ ?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -23,34 +29,35 @@
                                             <th>Age</th>
                                             <th>Start date</th>
                                             <th>Salary</th>
-                                            <th> Delete </th>
-                                            <th> Update</th>
-
+                                            <th> Action </th>
+                                          
+                                          
                                         </tr>
                                         </thead>
 
 
                                         <tbody>
+                                            <?php while($donnees = $req->fetch()) {?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            
+                                            <td><?php echo $donnees['project_name'] ?></td>
+                                            <td><?php echo $donnees['Description'] ?></td>
+                                            <td><?php echo $donnees['date_deb'] ?></td>
+                                            <td><?php echo $donnees['date_fin'] ?></td>
+                                            <td><?php echo $donnees['Pourcentage'] ?></td>
+                                            <td><?php echo $donnees['prix'] ?></td>
                                             <td>
 												<center>
-													<button class="ti-trash"></button>
+													 <a href="controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
 												</center>
-											</td>
-                                            <td>
+										
 												<center>
-													<button class="ti-pencil-alt"></button>
+													<a href="ModifProjet.php?id=<?php echo $donnees['id_projet']?>" class="ti-pencil-alt"> </a>
 												</center>
 											</td>
 
                                         </tr>
-                                        
+                                         <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

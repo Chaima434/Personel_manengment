@@ -1,3 +1,9 @@
+<?php
+
+include('./includes/connect_db.php');
+$req = $bdd->query("SELECT * FROM admin");
+
+ ?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -28,21 +34,25 @@
 
 
                                         <tbody>
+                                            <?php while($donnees = $req->fetch()) {?>
                                         <tr>
-                                            <td>salah</td>
-                                            <td>ben foulen</td>
-                                            <td>salah@gmail.com</td>
-                                            <td>123456789</td>
+                                            <td><?php echo $donnees['first_name'] ?></td>
+                                            <td><?php echo $donnees['last_name'] ?></td>
+                                            <td><?php echo $donnees['login'] ?></td>
+                                            <td><?php echo $donnees['password'] ?></td>
 											<td> 
 												<center>
-													<button class="ti-trash"></button>
+                                                    <a href="controller/SuppAdmin.php?id=<?php echo $donnees['id']?>" class="ti-trash"> </a>
 												</center>
 
 												<center>
-													<button class="ti-pencil-alt"></button>
+													
+
+                                                    <a href="modifAdmin.php?id=<?php echo $donnees['id']?>" class="ti-pencil-alt"> </a>
 												</center>
 											</td>
                                         </tr>
+                                    <?php } ?>
                                        
                                         </tbody>
                                     </table>
