@@ -1,3 +1,9 @@
+<?php
+include('../App/includes/connect_db.php');
+$req = $bdd->query("SELECT * FROM projet");
+$req1 = $bdd->query("SELECT * FROM personnel");
+
+?>
 
  <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -40,16 +46,48 @@
                                            <input type="text" name="Description" parsley-trigger="change" required
                                                    placeholder="Enter Description" class="form-control" id="Description">
                                         </div>
+
+
+
                                         <div class="form-group">
-                                            <label for="personnel">personnel</label>
-                                            <input type="text" name="personnel" parsley-trigger="change" required
-                                                   placeholder="Enter your personnel" class="form-control" id="personnel">
+                                            <label for="projet">Personnel</label>
+                                           <select type="texts" name="personnel" parsley-trigger="change" required
+                                                    class="form-control" id="personnel "> 
+                                                <?php while($donnees1 = $req1->fetch()) {?> 
+                                                    <option value="<?php echo $donnees1['id_personnel'] ?>">
+
+                                                        <?php
+                                                       echo $donnees1['login']
+                                                        ?>
+                                                    </option>
+                                                    <?php
+
+                                                 } ?>
+
+                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="projet">projet</label>
-                                            <input type="texts" name="projet" parsley-trigger="change" required
-                                                   placeholder="Enter your projet" class="form-control" id="projet">
+
+
+                                         <div class="form-group">
+                                            <label for="projet">Project</label>
+                                           <select type="texts" name="projet" parsley-trigger="change" required
+                                                    class="form-control" id="projet "> 
+                                                <?php while($donnees = $req->fetch()) {?> 
+                                                    <option value="<?php echo $donnees['id_projet'] ?>">
+
+                                                        <?php
+                                                       echo $donnees['project_name']
+                                                        ?>
+                                                    </option>
+                                                    <?php
+
+                                                 } ?>
+
+                                             </select>
                                         </div>
+
+
+                                        
                                         <div class="form-group">
                                             <label for="date_fin">date_fin</label>
                                             <input type="date" name="date_fin" parsley-trigger="change" required
@@ -65,6 +103,7 @@
                                             <input data-parsley-equalto="#etat" type="etat" required
                                                    placeholder="etat" class="form-control" id="etat" name="etat">
                                         </div>
+                                       
                                         <div class="form-group text-right mb-0">
                                             <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
                                                 Submit

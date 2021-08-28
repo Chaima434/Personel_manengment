@@ -8,7 +8,7 @@ if ((!isset($_SESSION['login'])) || !isset($_SESSION['password']))
 ?>
 <head>
         <meta charset="utf-8" />
-        <title>Dashboard | Adminto </title>
+        <title>Dashboard Admin </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -36,5 +36,6 @@ if ((!isset($_SESSION['login'])) || !isset($_SESSION['password']))
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="assets/css/app.min.css" id="app-stylesheet" rel="stylesheet" type="text/css" />
+        
 </head>
 

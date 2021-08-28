@@ -1,4 +1,10 @@
- <!-- ============================================================== -->
+
+<?php
+include('../App/includes/connect_db.php');
+
+
+?>
+<!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -39,16 +45,22 @@
                                            <input type="text" name="last_name" parsley-trigger="change" required
                                                    placeholder="Enter Lastname" class="form-control" id="Last Name">
                                         </div>
+
+
                                         <div class="form-group">
                                             <label for="LastName">CIN</label>
                                             <input type="text" name="CIN" parsley-trigger="change" required
                                                    placeholder="Enter your CIN" class="form-control" id="CIN">
                                         </div>
+
+
+
+
+
                                         <div class="form-group">
                                             <label for="emailAddress">Email address</label>
-                                            <input type="email" name="email" parsley-trigger="change" required
-                                                   placeholder="Enter email" class="form-control" id="emailAddress">
-                                        </div>
+                                            <input type="email" name="email" parsley-trigger="change" required placeholder="Enter email" class="form-control" id="emailAddress">
+                                         </div> 
                                         <div class="form-group">
                                             <label for="pass1">Login</label>
                                             <input id="pass1" type="login" placeholder="login" required
@@ -64,6 +76,7 @@
                                             <input data-parsley-equalto="#pass1" type="password" required
                                                    placeholder=" Confirm Password" class="form-control" id="passWord2">
                                         </div>
+
                                         
 
                                         <div class="form-group text-right mb-0">

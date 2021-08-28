@@ -46,6 +46,37 @@ public function modifier(){
 
 
 }
+public function getAll()
+        {
+            try
+            {
+               include('../includes/connect_db.php');
+                $T = array();
+                $res = $bdd->query("SELECT * from personnel");
+                $i = 0;
+                while($tab=$res->fetch(PDO::FETCH_NUM))
+                {
+                    $T[$i] = $Array = array
+                    (	'id'=>$tab[0],
+                        'first_name'=> $tab[1],
+                        'last_name' => $tab[2],
+                        'CIN' => $tab[3],
+                        'email' => $tab[4],
+                        'login' => $tab[5],
+                        'password'=> $tab[6],
+                        
+                        
+                    );
+                    $i++;
+                }
+                return $T;
+            }
+            catch(Exception $e)
+            {
+                echo "Error : ".$e;
+                return null;
+            }
+        }
 
 
 public function supprimer(){ 

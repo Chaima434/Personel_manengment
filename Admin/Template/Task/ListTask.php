@@ -22,7 +22,7 @@ $req = $bdd->query("SELECT * FROM tache");
                                     <p class="text-muted font-14 mb-3">
                                     </p>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap">
+                                    <table id="datatable" class="table mb-0">
                                         <thead>
                                         <tr>
                                             <th>title</th>
@@ -32,6 +32,8 @@ $req = $bdd->query("SELECT * FROM tache");
                                             <th>date_fin</th>
                                             <th>pourcentage</th>
                                             <th> etat </th>
+
+                                             <th> <center>action</center> </th>
                                           
                                           
                                         </tr>
@@ -50,13 +52,17 @@ $req = $bdd->query("SELECT * FROM tache");
                                             <td><?php echo $donnees['pourcentage'] ?></td>
                                             <td><?php echo $donnees['etat'] ?></td>
                                             <td>
-                                                <center>
+                                                <!--<center>
                                                      <a href="../App/controller/SuppTask.php?id_task=<?php echo $donnees['id_task']?>" class="ti-trash"> </a>
                                                 </center>
                                         
                                                 <center>
-                                                    <a href="ModifTask.php?id=<?php echo $donnees['id_task']?>" class="ti-pencil-alt"> </a>
-                                                </center>
+                                                    <a href="ModifTask.php?id=<?php echo $donnees['id_task']?>" class="success"> </a>
+                                                </center> !-->
+
+                                                 <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_task']?>)">Update</button>
+
+                                                 <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php echo $donnees['id_task']?>)">Delete</button>
                                             </td>
 
                                         </tr>
@@ -97,3 +103,15 @@ $req = $bdd->query("SELECT * FROM tache");
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+<script>
+    function destroy (id)
+    {
+
+        location.href = "../App/controller/SuppTask.php?id_task=" +id;
+    }
+    function update (id)
+    {
+        //alert("ModifTask.php?id=" + id);
+        location.href = "ModifTask.php?id=" + id;
+    }
+</script>

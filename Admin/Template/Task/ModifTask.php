@@ -1,6 +1,8 @@
 <?php 
 
 include('../App/includes/connect_db.php');
+$req2= $bdd->query("SELECT * FROM projet");
+$req1 = $bdd->query("SELECT * FROM personnel");
 
         $id = $_GET['id'];
 //echo $id;
@@ -51,16 +53,48 @@ include('../App/includes/connect_db.php');
                                            <input type="text" name="Description" parsley-trigger="change" required
                                                    placeholder="Enter Description" class="form-control" id="Description" value="<?php echo $donnees['Description'] ?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="personnel">personnel</label>
-                                            <input type="text" name="personnel" parsley-trigger="change" required
-                                                   placeholder="Enter your personnel" class="form-control" id="personnel" value="<?php echo $donnees['personnel'] ?>">
+                                         <div class="form-group">
+                                            <label for="projet">Personnel</label>
+                                           <select type="texts" name="personnel" parsley-trigger="change" required
+                                                    class="form-control" id="personnel "> 
+                                                <?php while($donnees1 = $req1->fetch()) {?> 
+                                                    <option value="<?php echo $donnees1['first_name'] ?>">
+
+                                                        <?php
+                                                       echo $donnees1['first_name']
+                                                        ?>
+                                                    </option>
+                                                    <?php
+
+                                                 } ?>
+
+                                             </select>
                                         </div>
+
+
+
+
                                         <div class="form-group">
-                                            <label for="projet">projet</label>
-                                            <input type="texts" name="projet" parsley-trigger="change" required
-                                                   placeholder="Enter your projet" class="form-control" id="projet"value="<?php echo $donnees['projet'] ?>">
+                                            <label for="projet">Project</label>
+                                           <select type="texts" name="projet" parsley-trigger="change" required
+                                                    class="form-control" id="projet "> 
+                                                <?php while($donnees = $req2->fetch()) {?> 
+                                                    <option value="<?php echo $donnees['project_name'] ?>">
+
+                                                        <?php
+                                                       echo $donnees['project_name']
+                                                        ?>
+                                                    </option>
+                                                    <?php
+
+                                                 } ?>
+
+                                             </select>
                                         </div>
+
+
+
+
                                         <div class="form-group">
                                             <label for="date_fin">date_fin</label>
                                             <input type="date" name="date_fin" parsley-trigger="change" required

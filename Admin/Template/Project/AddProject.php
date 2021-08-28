@@ -1,3 +1,9 @@
+<?php
+
+include('../App/includes/connect_db.php');
+//$req = $bdd->query("SELECT * FROM personnel");
+
+ ?>
  <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
@@ -34,10 +40,29 @@
                                             <input type="text" name="project_name" parsley-trigger="change" required
                                                    placeholder="Enter project_name" class="form-control" id="project_name">
                                         </div>
+                                        
                                         <div class="form-group">
                                             <label for="Description">Description</label>
                                            <input type="text" name="Description" parsley-trigger="change" required
                                                    placeholder="Enter Description" class="form-control" id="Description">
+
+
+                                       <!-- <div class="form-group">
+                                            <label for="projet">Personnel</label>
+                                           <select type="texts" name="personnel" parsley-trigger="change" required
+                                                    class="form-control" id="personnel "> 
+                                                <?php //while($donnees = $req->fetch()) {?> 
+                                                    <option value="<?php //echo $donnees['id_personnel'] ?>">
+
+                                                        <?php
+                                                       //echo $donnees['first_name']
+                                                        ?>
+                                                    </option>
+                                                    <?php
+
+                                                // } ?> -->
+
+                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="date_debut">date_debut</label>

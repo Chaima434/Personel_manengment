@@ -20,7 +20,7 @@ $req = $bdd->query("SELECT * FROM personnel");
                                     <p class="text-muted font-14 mb-3">
                                     </p>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap">
+                                    <table id="datatable" class="table mb-0">
                                         <thead>
                                         <tr>
                                             <th>first_name</th>
@@ -29,7 +29,7 @@ $req = $bdd->query("SELECT * FROM personnel");
                                             <th>email</th>
                                             <th>login</th>
                                             <th>password</th>
-                                            <th>Action</th>
+                                           <th> <center>action</center> </th>
                                            
 
 
@@ -47,14 +47,17 @@ $req = $bdd->query("SELECT * FROM personnel");
                                             <td><?php echo $donnees['login'] ?></td>
                                             <td><?php echo $donnees['password'] ?></td>
                                             <td>
-												<center>
+												<!--<center>
                                                     <a href="../App/controller/SuppPersonnel.php?id_personnel=<?php echo $donnees['id_personnel']?>" class="ti-trash"> </a>
                                                 </center>
 
 												<center>
 													
                                                      <a href="ModifPersonnel.php?id=<?php echo $donnees['id_personnel']?>" class="ti-pencil-alt"> </a>
-												</center>
+												</center> !-->
+                                                <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_personnel']?>)">Update</button>
+
+                                                 <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php echo $donnees['id_personnel']?>)">Delete</button>
 											</td>
                                         </tr>
                                         <?php } ?>
@@ -93,3 +96,15 @@ $req = $bdd->query("SELECT * FROM personnel");
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+<script>
+    function destroy (id)
+    {
+
+        location.href = "../App/controller/SuppPersonnel.php?id_personnel=" +id;
+    }
+    function update (id)
+    {
+        //alert("ModifTask.php?id=" + id);
+        location.href = "ModifPersonnel.php?id=" + id;
+    }
+</script>

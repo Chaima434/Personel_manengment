@@ -20,15 +20,15 @@ $req = $bdd->query("SELECT * FROM admin");
                                     <p class="text-muted font-14 mb-3">
                                     </p>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap">
+                                    <table id="datatable" class="table mb-0">
                                         <thead>
                                         <tr>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Login</th>
-                                            <th>Mot de passe</th>
-											<th>Action</th>
-                                            
+                                            <th>first_name</th>
+                                            <th>last_name</th>
+                                            <th>login</th>
+                                            <th>password</th>
+											 <th> <center>action</center> </th>
+                                          
                                         </tr>
                                         </thead>
 
@@ -41,7 +41,7 @@ $req = $bdd->query("SELECT * FROM admin");
                                             <td><?php echo $donnees['login'] ?></td>
                                             <td><?php echo $donnees['password'] ?></td>
 											<td> 
-												<center>
+												<!--<center>
                                                     <a href="../App/controller/SuppAdmin.php?id=<?php echo $donnees['id']?>" class="ti-trash"> </a>
 												</center>
 
@@ -49,7 +49,11 @@ $req = $bdd->query("SELECT * FROM admin");
 													
 
                                                     <a href="modifAdmin.php?id=<?php echo $donnees['id']?>" class="ti-pencil-alt"> </a>
-												</center>
+												</center>!-->
+
+                                                 <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id']?>)">Update</button>
+
+                                                 <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php  echo $donnees['id']?>)">Delete</button>
 											</td>
                                         </tr>
                                     <?php } ?>
@@ -89,3 +93,16 @@ $req = $bdd->query("SELECT * FROM admin");
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+<script>
+    function destroy (id)
+    {
+
+        location.href = "../App/controller/SuppAdmin.php?id=" +id;
+    }
+    function update (id)
+    {
+        
+        location.href = "modifAdmin.php?id=" + id;
+        
+    }
+</script>

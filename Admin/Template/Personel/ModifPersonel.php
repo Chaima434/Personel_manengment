@@ -10,6 +10,8 @@ include('../App/includes/connect_db.php');
         
         $req = $bdd->query(" SELECT * FROM personnel WHERE id_personnel = $id ");
         $donnees = $req->fetch();
+        
+
 
 ?>
 

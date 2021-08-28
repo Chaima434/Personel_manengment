@@ -1,30 +1,34 @@
 <?php
     
-    require_once('../model/Admin.class.php');
- 
+   require_once('../model/Admin.class.php');
+    
     $admin = new Admin(null,null,null,null);
-    foreach ($admin->getall() as $v) {
-        if ($v['login'] != $_POST['login'])
+    $test=false;
+    $id=0;
+    foreach ($admin->getall() as $v) 
+    {
+        if ($v['login'] == $_POST['login'])
         {
-            echo "this login is not found";
-            break;
-        }
-        else 
-        {
-            if($v['password'] != md5 ($_POST['password']))
+          if($v['password'] == md5 ($_POST['password']) )
+
             {
-                echo "your paasword est incorrect";
+                $test=true;
+                $id=$v['id'];
                 break;
             }
-            else 
-            {
-                session_start();
-                $_SESSION['login'] =$_POST['login'];
-                $_SESSION['password'] =$_POST['password'];
-                header('location:../index.php');
-            }
-
         }
+    }
+    if ($test==true)
+    {
+        session_start();
+        $_SESSION['id'] =$id;
+        $_SESSION['login'] =$_POST['login'];
+        $_SESSION['password'] =$_POST['password'];
+        header('location:../../Admin/index.php');
+    }
+    else
+    {
+        echo "your login or your password not correct";
     }
     
 ?>

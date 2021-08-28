@@ -14,9 +14,6 @@ $this->first_name = addslashes($first_name);
 $this->last_name = addslashes($last_name);
 $this->login = addslashes($login);
 $this->password = md5($password);
-
-
-
 }
 
 public function ajouter(){ 

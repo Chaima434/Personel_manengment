@@ -6,54 +6,16 @@
 			<img src="assets/images/users/user-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail avatar-md" />
 			<div class="dropdown">
 				<a href="#" class="user-name dropdown-toggle h5 mt-2 mb-1 d-block" data-toggle="dropdown"  aria-expanded="false">
-					Nowak Helme
+				<?php
+					echo($_SESSION['login']); //bech ykoun dynamique li bech yconnecty ykoun esmou ghadi
+				?>
 				</a>
-				<div class="dropdown-menu user-pro-dropdown">
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="fe-user mr-1"></i>
-						<span>
-							My Account
-						</span>
-					</a>
-						<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="fe-settings mr-1"></i>
-						<span>
-							Settings
-						</span>
-					</a>
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="fe-lock mr-1"></i>
-						<span>
-							Lock Screen
-						</span>
-					</a>
-					<!-- item-->
-					<a href="javascript:void(0);" class="dropdown-item notify-item">
-						<i class="fe-log-out mr-1"></i>
-						<span>
-							Logout
-						</span>
-					</a>
-				</div>
+				
 			</div>
 			<p class="text-muted">
 				Admin Head
 			</p>
-			<ul class="list-inline">
-				<li class="list-inline-item">
-					<a href="#" class="text-muted">
-						<i class="mdi mdi-cog"></i>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a href="#">
-						<i class="mdi mdi-power"></i>
-					</a>
-				</li>
-			</ul>
+			
 		</div>
 		<!--- Sidemenu -->
 		<div id="sidebar-menu">
@@ -68,9 +30,6 @@
 						<span> 
 							Dashboard 
 						</span>
-						<span class="menu-arrow"></span>
-						
-
 				</li>
 				<li>
 					<a href="javascript: void(0);">
@@ -160,6 +119,31 @@
 						</li>
 					</ul>
 				</li>
+
+
+
+				<li>
+					<a href="javascript: void(0);">
+						<i class="   fas fa-user-tie"></i>
+						<span> 
+							Client Manengment 
+						</span>
+						<span class="menu-arrow"></span>
+					</a>
+					<ul class="nav-second-level" aria-expanded="false">
+						<li>
+							<a href="AddClient.php">
+								Add new Client
+							</a>
+						</li>
+						<li>
+							<a href="ListClient.php">
+								List of Client
+							</a>
+						</li>
+					</ul>
+				</li>
+
 
 
 

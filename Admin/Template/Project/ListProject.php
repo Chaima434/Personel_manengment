@@ -1,10 +1,7 @@
 <?php
-
-
 include('../App/includes/connect_db.php');
 $req = $bdd->query("SELECT * FROM projet");
-
- ?>
+?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
@@ -17,20 +14,20 @@ $req = $bdd->query("SELECT * FROM projet");
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
-                                    <h4 class="mt-0 header-title">List of Personel</h4>
+                                    <h4 class="mt-0 header-title">List of Project </h4>
                                     <p class="text-muted font-14 mb-3">
                                     </p>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap">
+                                    <table id="datatable" class="table mb-0">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th> Action </th>
+                                            <th>project_name</th>
+                                            <th>Description</th>
+                                            <th>date_deb</th>
+                                            <th>date_fin</th>
+                                            <th>Pourcentage</th>
+                                            <th>prix</th>
+                                            <th> <center>action</center> </th>
                                           
                                           
                                         </tr>
@@ -48,13 +45,17 @@ $req = $bdd->query("SELECT * FROM projet");
                                             <td><?php echo $donnees['Pourcentage'] ?></td>
                                             <td><?php echo $donnees['prix'] ?></td>
                                             <td>
-												<center>
-													 <a href="../App/controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
-												</center>
-										
-												<center>
-													<a href="ModifProjet.php?id=<?php echo $donnees['id_projet']?>" class="ti-pencil-alt"> </a>
-												</center>
+                                            <!--<center>
+                                                     <a href="../App/controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
+                                                </center>
+                                        
+                                                <center>
+                                                    <a href="ModifProjet.php?id=<?php echo $donnees['id_projet']?>" class="ti-pencil-alt"> </a>
+                                                </center> !-->
+                                                <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_projet']?>)">Update</button>
+
+                                                 <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php  echo $donnees['id_projet']?>)">Delete</button>
+												
 											</td>
 
                                         </tr>
@@ -94,3 +95,15 @@ $req = $bdd->query("SELECT * FROM projet");
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+<script>
+    function destroy (id)
+    {
+
+        location.href = "../App/controller/SuppProjet.php?id_projet=" +id;
+    }
+    function update (id)
+    {
+        
+        location.href = "ModifProjet.php?id=" + id;
+    }
+</script>
