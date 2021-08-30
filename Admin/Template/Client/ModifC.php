@@ -5,9 +5,7 @@
 include('../App/includes/connect_db.php');
 
         $id = $_GET['id'];
-//echo $id;
-//exit;
-        
+
         $req = $bdd->query(" SELECT * FROM client WHERE id_client = $id ");
         $donnees = $req->fetch();
 

@@ -1,14 +1,14 @@
 <?php 
 
 include('../App/includes/connect_db.php');
-
+$req1 = $bdd->query("SELECT * FROM personnel");
         $id = $_GET['id'];
 //echo $id;
 //exit;
         
         $req = $bdd->query(" SELECT * FROM projet WHERE id_projet = $id ");
         $donnees = $req->fetch();
-$req = $bdd->query("SELECT * FROM personnel");
+
 ?>
  <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -51,15 +51,18 @@ $req = $bdd->query("SELECT * FROM personnel");
                                            <input type="text" name="Description" parsley-trigger="change" required
                                                    placeholder="Enter Description" class="form-control" id="Description" value="<?php echo $donnees['Description'] ?>">
                                         </div>
-                                        <div class="form-group">
+                                        
+
+
+                                       <div class="form-group">
                                             <label for="projet">Personnel</label>
                                            <select type="texts" name="personnel" parsley-trigger="change" required
                                                     class="form-control" id="personnel "> 
-                                                <?php while($donnees = $req->fetch()) {?> 
-                                                    <option value="<?php echo $donnees['id_personnel'] ?>">
+                                                <?php while($donnees1 = $req1->fetch()) {?> 
+                                                    <option value="<?php echo $donnees1['first_name'] ?>">
 
                                                         <?php
-                                                       echo $donnees['first_name']
+                                                       echo $donnees1['first_name']
                                                         ?>
                                                     </option>
                                                     <?php
@@ -68,6 +71,8 @@ $req = $bdd->query("SELECT * FROM personnel");
 
                                              </select>
                                         </div>
+
+
                                         <div class="form-group">
                                             <label for="date_debut">date_debut</label>
                                             <input type="date" name="date_deb" parsley-trigger="change" required

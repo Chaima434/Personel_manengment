@@ -2,15 +2,17 @@
 class Projet{
 private $project_name;
 private $Description;
+private $personnel;
 private $date_deb;
 private $date_fin;
 private $Pourcentage;
 private $prix;
 
 
-function __construct($project_name,$Description,$date_deb,$date_fin,$Pourcentage,$prix){
+function __construct($project_name,$Description,$personnel,$date_deb,$date_fin,$Pourcentage,$prix){
 $this->project_name = addslashes($project_name);
 $this->Description = addslashes($Description);
+$this->personnel = addslashes($personnel);
 $this->date_deb = addslashes($date_deb);
 $this->date_fin = addslashes($date_fin);
 $this->Pourcentage = addslashes($Pourcentage);
@@ -24,7 +26,7 @@ public function ajouter(){
 
 include('../includes/connect_db.php');
 		
-		$req = $bdd->exec("INSERT INTO `projet`(`project_name`, `Description`, `date_deb`,`date_fin`,`Pourcentage`,`prix`)	VALUES ('$this->project_name','$this->Description','$this->date_deb','$this->date_fin','$this->Pourcentage','$this->prix')");
+		$req = $bdd->exec("INSERT INTO `projet`(`project_name`, `Description`,`personnel`, `date_deb`,`date_fin`,`Pourcentage`,`prix`)	VALUES ('$this->project_name','$this->Description','$this->personnel','$this->date_deb','$this->date_fin','$this->Pourcentage','$this->prix')");
 		echo'<span class="message_envoyer">OUI</span>';
                 //return TRUE;
 			
@@ -38,7 +40,7 @@ public function modifier(){
 
        $id=$_GET['id'];
         
-        $r=$bdd->exec(" UPDATE `projet` SET `project_name`='$this->project_name',`Description`='$this->Description',`date_deb`='$this->date_deb',`date_fin`='$this->date_fin',`Pourcentage`='$this->Pourcentage',`prix`='$this->prix' WHERE id_projet = $id");
+        $r=$bdd->exec(" UPDATE `projet` SET `project_name`='$this->project_name',`Description`='$this->Description',`personnel`='$this->personnel',`date_deb`='$this->date_deb',`date_fin`='$this->date_fin',`Pourcentage`='$this->Pourcentage',`prix`='$this->prix' WHERE id_projet = $id");
 				
         
        // echo'oui';

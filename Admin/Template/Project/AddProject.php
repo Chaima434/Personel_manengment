@@ -1,7 +1,7 @@
 <?php
 
 include('../App/includes/connect_db.php');
-//$req = $bdd->query("SELECT * FROM personnel");
+$req = $bdd->query("SELECT * FROM personnel");
 
  ?>
  <!-- ============================================================== -->
@@ -47,20 +47,20 @@ include('../App/includes/connect_db.php');
                                                    placeholder="Enter Description" class="form-control" id="Description">
 
 
-                                       <!-- <div class="form-group">
+                                        <div class="form-group">
                                             <label for="projet">Personnel</label>
                                            <select type="texts" name="personnel" parsley-trigger="change" required
                                                     class="form-control" id="personnel "> 
-                                                <?php //while($donnees = $req->fetch()) {?> 
-                                                    <option value="<?php //echo $donnees['id_personnel'] ?>">
+                                                <?php while($donnees = $req->fetch()) {?> 
+                                                    <option value="<?php echo $donnees['id_personnel'] ?>">
 
                                                         <?php
-                                                       //echo $donnees['first_name']
+                                                       echo $donnees['first_name']
                                                         ?>
                                                     </option>
                                                     <?php
 
-                                                // } ?> -->
+                                                 } ?> -->
 
                                              </select>
                                         </div>

@@ -23,7 +23,8 @@ $req = $bdd->query("SELECT * FROM projet");
                                         <tr>
                                             <th>project_name</th>
                                             <th>Description</th>
-                                            <th>date_deb</th>
+                                             <th>Personnel</th>
+                                             <th>date_deb</th>
                                             <th>date_fin</th>
                                             <th>Pourcentage</th>
                                             <th>prix</th>
@@ -40,18 +41,13 @@ $req = $bdd->query("SELECT * FROM projet");
                                             
                                             <td><?php echo $donnees['project_name'] ?></td>
                                             <td><?php echo $donnees['Description'] ?></td>
+                                            <td><?php echo $donnees['personnel'] ?></td>
                                             <td><?php echo $donnees['date_deb'] ?></td>
                                             <td><?php echo $donnees['date_fin'] ?></td>
                                             <td><?php echo $donnees['Pourcentage'] ?></td>
                                             <td><?php echo $donnees['prix'] ?></td>
                                             <td>
-                                            <!--<center>
-                                                     <a href="../App/controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
-                                                </center>
-                                        
-                                                <center>
-                                                    <a href="ModifProjet.php?id=<?php echo $donnees['id_projet']?>" class="ti-pencil-alt"> </a>
-                                                </center> !-->
+                                            
                                                 <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_projet']?>)">Update</button>
 
                                                  <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php  echo $donnees['id_projet']?>)">Delete</button>

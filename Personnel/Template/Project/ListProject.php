@@ -2,9 +2,9 @@
 echo $_SESSION['id_personnel'];
 
 include('../App/includes/connect_db.php');
+
 $req = $bdd->query("SELECT * FROM projet WHERE
  personnel=".$_SESSION['id_personnel']);
-
 ?>
 <!-- Start Page Content here -->
             <!-- ============================================================== -->
@@ -18,7 +18,7 @@ $req = $bdd->query("SELECT * FROM projet WHERE
                         <div class="row">
                             <div class="col-12">
                                 <div class="card-box">
-                                    <h4 class="mt-0 header-title">List of Project </h4>
+                                    <h4 class="mt-0 header-title">List of your Projects </h4>
                                     <p class="text-muted font-14 mb-3">
                                     </p>
 
@@ -27,7 +27,8 @@ $req = $bdd->query("SELECT * FROM projet WHERE
                                         <tr>
                                             <th>project_name</th>
                                             <th>Description</th>
-                                            <th>date_deb</th>
+                                             <th>Personnel</th>
+                                             <th>date_deb</th>
                                             <th>date_fin</th>
                                             <th>Pourcentage</th>
                                             <th>prix</th>
@@ -44,21 +45,14 @@ $req = $bdd->query("SELECT * FROM projet WHERE
                                             
                                             <td><?php echo $donnees['project_name'] ?></td>
                                             <td><?php echo $donnees['Description'] ?></td>
+                                            <td><?php echo $donnees['personnel'] ?></td>
                                             <td><?php echo $donnees['date_deb'] ?></td>
                                             <td><?php echo $donnees['date_fin'] ?></td>
                                             <td><?php echo $donnees['Pourcentage'] ?></td>
                                             <td><?php echo $donnees['prix'] ?></td>
                                             <td>
-                                            <!--<center>
-                                                     <a href="../App/controller/SuppProjet.php?id_projet=<?php echo $donnees['id_projet']?>" class="ti-trash"> </a>
-                                                </center>
-                                        
-                                                <center>
-                                                    <a href="ModifProjet.php?id=<?php echo $donnees['id_projet']?>" class="ti-pencil-alt"> </a>
-                                                </center> !-->
-                                                <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_projet']?>)">Update</button>
-
-                                                 <!-- <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php // echo $donnees['id_projet']?>)">Delete</button> -->
+                                            
+                                                <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_projet']?>)">Afficher</button>
                                                 
                                             </td>
 
@@ -100,7 +94,7 @@ $req = $bdd->query("SELECT * FROM projet WHERE
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 <script>
-    /*function destroy (id)
+   /* function destroy (id)
     {
 
         location.href = "../App/controller/SuppProjet.php?id_projet=" +id;
@@ -108,6 +102,6 @@ $req = $bdd->query("SELECT * FROM projet WHERE
     function update (id)
     {
         
-        location.href = "ModifProjet.php?id=" + id;
+        location.href = "index.php?id=" + id;
     }
 </script>

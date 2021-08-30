@@ -149,34 +149,7 @@
 
 
 
-                <li class="menu-title">
-					Apps
-				</li>
-				<li>
-					<a href="apps-chat.html">
-						<i class="mdi mdi-forum"></i>
-						<span class="badge badge-purple float-right">New</span>
-						<span> 
-							Chat 
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="calendar.html">
-						<i class="mdi mdi-calendar"></i>
-						<span> 
-							Calendar 
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="inbox.html">
-						<i class="mdi mdi-email"></i>
-						<span> 
-							Mail 
-						</span>
-					</a>
-				</li>
+                
 			</ul>
 		</div>
       <!-- End Sidebar -->

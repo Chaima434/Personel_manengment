@@ -16,7 +16,7 @@
         require_once("Template/js.php");
         ?> 
         <?php
-        require_once("Template/Client/ModifClient.php");
+        require_once("Template/Client/ModifC.php");
         ?> 
          
         </div>

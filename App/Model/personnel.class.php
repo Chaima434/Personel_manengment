@@ -77,6 +77,28 @@ public function getAll()
                 return null;
             }
         }
+        public function findPersonnelById($id)
+      {
+         try
+         {
+           
+            $login="";
+            foreach ($this->getAll() as $v)
+            {
+               if ($id==$v{'id_personnel'})
+               {
+                 $login=$v['login'];
+                  break;
+               }
+            }
+            return ($login);
+         }
+         catch(Exception $e)
+         {
+            echo "Error : ".$e;
+            return null;
+         }
+      }
 
 
 public function supprimer(){ 
