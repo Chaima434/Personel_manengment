@@ -82,6 +82,19 @@
 						</span>
 						<span class="menu-arrow"></span>
 					</a>
+					<ul class="nav-second-level" aria-expanded="false">
+						
+						<li>
+							<a href="ListProject.php">
+								List of Projects
+							</a>
+						</li>
+						<li>
+							<a href="ModifProjet.php">
+								update Project
+							</a>
+						</li>
+					</ul>
 					
 				</li>
 

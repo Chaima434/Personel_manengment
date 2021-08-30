@@ -64,10 +64,10 @@ $req = $bdd->query("SELECT * FROM tache WHERE
 
                                                  <button type="button" class="btn btn-success waves-effect width-md waves-light" onclick="update(<?php echo $donnees['id_task']?>)">Update</button>
 
-                                                 <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php echo $donnees['id_task']?>)">Delete</button>
+                                                <!-- <button type="button" class="btn btn-danger waves-effect width-md waves-light" onclick="destroy(<?php// echo $donnees['id_task']?>)">Delete</button>
                                             </td>
 
-                                        </tr>
+                                        </tr> -->
                                          <?php } ?>
                                        
                                         </tbody>
@@ -106,11 +106,11 @@ $req = $bdd->query("SELECT * FROM tache WHERE
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 <script>
-    function destroy (id)
+    /*function destroy (id)
     {
 
         location.href = "../App/controller/SuppTask.php?id_task=" +id;
-    }
+    }*/
     function update (id)
     {
         //alert("ModifTask.php?id=" + id);
